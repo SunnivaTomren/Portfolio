@@ -1,35 +1,109 @@
-@import './base.css';
+/* global.css */
 
+/* Reset styles */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%; /* Ensure body spans full viewport height */
+  font-family: 'Georgia', serif; /* Soft, classic font */
+  background-color: #f8f4ec; /* Warm beige background */
+  color: #3e3e3e; /* Gentle dark gray for text */
+  overflow-x: hidden; /* Prevent horizontal scrolling */
+  scroll-behavior: smooth; /* Smooth scrolling for links */
+}
+
+/* Apply box-sizing globally */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* Centered app container */
 #app {
-  max-width: 1280px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; /* Center horizontally */
+  justify-content: center; /* Center vertically */
+  min-height: 100vh; /* Full viewport height */
+  width: 100%;
+  max-width: 1200px; /* Limit container width for readability */
   margin: 0 auto;
-  padding: 2rem;
-  font-weight: normal;
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.9); /* Subtle white background */
+  border-radius: 15px; /* Rounded corners */
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1); /* Soft shadow */
 }
 
-a,
-.green {
+/* Content Styling */
+main {
+  flex: 1;
+  width: 100%;
+  max-width: 800px; /* Limit content width for readability */
+  text-align: center;
+  padding: 20px;
+  background-color: rgba(250, 250, 245, 0.8); /* Subtle, translucent background */
+  border-radius: 10px; /* Rounded corners */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05); /* Gentle shadow */
+}
+
+/* Header styling */
+header {
+  text-align: center;
+  background-color: rgba(240, 235, 225, 0.9); /* Soft beige header */
+  padding: 20px 0;
+  position: sticky; /* Keep the header on screen while scrolling */
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Soft header shadow */
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2.5rem;
+  font-family: 'Georgia', serif;
+  color: #a61515;
+}
+
+header nav a {
+  margin: 0 10px;
+  color: #4a90e2; /* Soft blue */
   text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
-  transition: 0.4s;
-  padding: 3px;
+  font-size: 1.2rem;
 }
 
-@media (hover: hover) {
-  a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
-  }
+header nav a:hover {
+  color: #3568b4; /* Slightly darker blue on hover */
+  text-decoration: underline;
 }
 
-@media (min-width: 1024px) {
-  body {
-    display: flex;
-    place-items: center;
-  }
+/* Footer styling */
+footer {
+  text-align: center;
+  padding: 10px;
+  background-color: rgba(240, 240, 240, 0.95); /* Neutral light gray */
+  border-top: 1px solid #ddd;
+  font-size: 0.9rem;
+}
 
+/* Responsiveness */
+@media (max-width: 768px) {
   #app {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 0 2rem;
+      padding: 15px;
+  }
+
+  main {
+      padding: 15px;
+  }
+
+  header h1 {
+      font-size: 2rem;
+  }
+
+  header nav a {
+      font-size: 1rem;
+  }
+
+  section {
+      margin: 15px 0;
+      padding: 10px 15px;
   }
 }
